@@ -1,0 +1,74 @@
+
+<html>
+	<head>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	
+	<!-- Main Style --> 
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	
+	<!-- Highcharts Stuff --> 
+	<script src="js/highcharts/js/highcharts.js"></script>
+	<script src="js/highcharts/js/highcharts-more.js"></script>
+	<script src="js/highcharts/js/modules/exporting.js"></script>
+	</head>
+
+
+	<body>
+
+	<div id='logo'>
+		<img src='img/logo.png'  height="60px"/>
+		<h3>University of Waterloo Alternate Fuels Team</h3>
+	</div>
+	<div id='car'>
+		<p style='left:10px; top:10px;'>SOC <span>80%</span></p>
+		<p style='right:10px; top:10px;'>Operation Mode <span>Parallel</span></p>
+		<p style='left:20px; bottom:10px;'>Remaining EV Range <span> 20km</span></p>	
+		<img src="img/car.png" height="100%" style='padding-left:110px;width:80%;height:100%;'/>
+		<p style='right:10px; bottom:5px; '>Total Estimated EV Range <span> 60km</span></p>
+
+	</div>
+
+	<!-- class used to enclose gauge and position it --> 
+	<div class='speedo'>
+		<div id='speedo'></div>
+	</div>
+
+	<div id="extra_stats">
+		<div class='content'>
+			<div class='left'>
+				<p><span>MPG:</span> 20</p>
+				<p><span>Km/100L:</span> 10</p>
+				<p><span>Battery:</span> 12</p>
+			</div>
+			<div class='right'>
+				<p><span>Gear:</span> 20</p>
+				<p><span>Engine Temp:</span> 10</p>
+				<p><span>Something Else:</span> 12</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- graphs on the side --> 
+	<div id='graph_sidebar'>
+		<div id="fuel_consumption" class="graph"></div>
+		<div id="fuel_efficiency" 	class="graph" ></div>
+		<div id="emissions" 		class="graph" ></div>
+		<div id="electrical_consumption" class="graph" ></div>
+		<div id="electrical_generation" class="graph" ></div>
+	</div>
+
+
+
+
+	<!-- Scripts for Graphs --> 
+	<script src="js/graphs/fuel_consumption.js"></script>
+	<script src="js/graphs/fuel_efficiency.js"></script>
+	<script src="js/graphs/emissions.js"></script>
+	<script src="js/graphs/electrical_consumption.js"></script>
+	<script src="js/graphs/speedo.js"></script>
+
+
+
+
+	</body>
+</html>
