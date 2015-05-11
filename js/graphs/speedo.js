@@ -281,27 +281,6 @@ $(function () {
         
          function(chart) {
 
-              // 2nd pane center
-              var pane = chart.panes[1].center; 
-              chart.ledBox = chart.renderer.rect(pane[0]-50, pane[1], 120, 80, 3).attr({
-                    fill: 'rgba(0,0,0, 0)',
-              }).add();
-
-              var timer = setInterval(function () {
-                   var val = (rpmAccel[valCounter] === undefined) ? null : rpmAccel[valCounter];
-                   var speed = (speedAccel[spCounter] === undefined) ? null : speedAccel[spCounter];
-                   if (val !== null) {
-                       chart.series[1].points[0].update(val);
-                       valCounter++;
-                   }
-                   if (speed !== null) {
-                       chart.series[0].points[0].update(speed);
-                       spCounter++;
-                   }
-                   if (speed === null && val === null) {
-                       clearInterval(timer);
-                   }
-              }, 200);
         });
     });
     
