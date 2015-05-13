@@ -32,7 +32,6 @@ $(function () {
 	            enabled: false
 	        },
 	        series: [{
-	            name: 'Tokyo',
 	            color: '#00ccff',
 	            data: [],
 

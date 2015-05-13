@@ -118,12 +118,16 @@
 					if(time % 10 == 0){ 
 						// Add points to graph 
 
-						vehicle_data.fuel_consumption 		= parseInt(vehicle_data.fuel_consumption);
-						vehicle_data.fuel_economy 			= parseInt(vehicle_data.fuel_economy);
-						vehicle_data.emissions 				= parseInt(vehicle_data.emissions);
-						vehicle_data.electrical_consumption = parseInt(vehicle_data.electrical_consumption);
-						vehicle_data.speed 					= parseInt(vehicle_data.speed);
-						vehicle_data.engine_speed			= parseInt(vehicle_data.engine_speed);
+						vehicle_data.fuel_consumption 			= parseInt(vehicle_data.fuel_consumption).toFixed(2);
+						vehicle_data.fuel_economy 				= parseInt(vehicle_data.fuel_economy).toFixed(2);
+						vehicle_data.emissions 					= parseInt(vehicle_data.emissions).toFixed(2);
+						vehicle_data.electrical_consumption 	= parseInt(vehicle_data.electrical_consumption).toFixed(2);
+						vehicle_data.speed 						= parseInt(vehicle_data.speed).toFixed(2);
+						vehicle_data.engine_speed				= parseInt(vehicle_data.engine_speed).toFixed(2);
+						vehicle_data.soc						= parseInt(vehicle_data.soc).toFixed(2);
+						vehicle_data.ev_range_remaining			= parseInt(vehicle_data.ev_range_remaining).toFixed(2);
+						vehicle_data.trip_fuel_economy_us		= parseInt(vehicle_data.trip_fuel_economy_us).toFixed(2);
+						vehicle_data.trip_fuel_economy_metric	= parseInt(vehicle_data.trip_fuel_economy_metric).toFixed(2);
 
 						fuel_con.series[0].addPoint([time, vehicle_data.fuel_consumption]);
 						fuel_eff.series[0].addPoint([time, vehicle_data.fuel_economy]);
