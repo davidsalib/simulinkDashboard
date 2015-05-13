@@ -36,12 +36,12 @@
 	<div id="extra_stats">
 		<div class='content'>
 			<div class='left'>
-				<p>MPG:	<span id='trip_fuel_economy_us'> 20</span></p>
-				<p>Km/100L:	<span id='trip_fuel_economy_metric'> 10</span></p>
+				<p>MPG:	<span id='trip_fuel_economy_us'></span></p>
+				<p>Km/100L:	<span id='trip_fuel_economy_metric'></span></p>
 			</div>
 			<div class='right'>
-				<p>Gear: <span id='gear'>20</span></p>
-				<p>Engine Temp:<span id='engine_temp'> 10</p>
+				<p>Gear: <span id='gear'></span></p>
+				<p>Engine Temp:<span id='engine_temp'></p>
 			</div>
 		</div>
 	</div>
@@ -83,7 +83,7 @@
 				var emmissions = $('#emissions').highcharts();
 				var elect_cons = $('#electrical_consumption').highcharts();
 				var speedo = $('#speedo').highcharts();
-			
+
 				url = "ws://localhost:50002";
 				
 				if ("WebSocket" in window) {
@@ -121,9 +121,11 @@
 					// Update time to plot in next position on next message 
 					time += 1; 
 
-					// Update speedo
-					speedo.series[1].points[0].update(vehicle_data.engine_speed);
-					speedo.series[0].points[0].update(vehicle_data.speed);          
+					// Update speedo				
+		            var first = $('#speedo').highcharts().series[0].points[0];       
+		            var second = $('#speedo').highcharts().series[1].points[0];       
+		            first.update(vehicle_data.speed);     
+		            second.update(vehicle_data.engine_speed)   
 
 					//document.getElementById("speed").innerHTML = vehicle_data.speed;
 					//document.getElementById("fuel_consumption").innerHTML = vehicle_data.fuel_consumption;
@@ -134,7 +136,7 @@
 					document.getElementById("ev_range_remaining").innerHTML = vehicle_data.ev_range_remaining;
 					document.getElementById("ev_range_total").innerHTML = vehicle_data.ev_range_total;
 					document.getElementById("operation_mode").innerHTML = vehicle_data.operation_mode;
-					document.getElementById("engine_speed").innerHTML = vehicle_data.engine_speed;
+					//document.getElementById("engine_speed").innerHTML = vehicle_data.engine_speed;
 					document.getElementById("trip_fuel_economy_us").innerHTML = vehicle_data.trip_fuel_economy_us;
 					document.getElementById("trip_fuel_economy_metric").innerHTML = vehicle_data.trip_fuel_economy_metric;
 					document.getElementById("gear").innerHTML = vehicle_data.gear;
