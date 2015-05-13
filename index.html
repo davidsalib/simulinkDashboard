@@ -70,17 +70,20 @@
 			var url;
 
 
-			// Used to add points to all the graphs and gauge
-			var fuel_con = $('#fuel_consumption').highcharts();
-			var fuel_eff = $('#fuel_efficiency').highcharts();
-			var emmissions = $('#emissions').highcharts();
-			var elect_cons = $('#electrical_consumption').highcharts();
-			var speedo = $('#speedo').highcharts();
+			
 
 			// used to set X value of charts 
 		    var time = 0; 
 
 			function connect() {
+
+				// Used to add points to all the graphs and gauge
+				var fuel_con = $('#fuel_consumption').highcharts();
+				var fuel_eff = $('#fuel_efficiency').highcharts();
+				var emmissions = $('#emissions').highcharts();
+				var elect_cons = $('#electrical_consumption').highcharts();
+				var speedo = $('#speedo').highcharts();
+			
 				url = "ws://localhost:50002";
 				
 				if ("WebSocket" in window) {
