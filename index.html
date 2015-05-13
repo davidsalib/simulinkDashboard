@@ -109,13 +109,9 @@
 				
 				ws.onmessage = function(e) {
 
-					
-
 					// Parse data from Simulink
 					var vehicle_data = JSON.parse(e.data).vehicle;
-					
-
-
+	
 					// Update time to plot in next position on next message 
 					time += 1;
 
@@ -123,7 +119,7 @@
 						// Add points to graph 
 						fuel_con.series[0].addPoint([time, vehicle_data.fuel_consumption]);
 						fuel_eff.series[0].addPoint([time, vehicle_data.fuel_economy]);
-						emmissions.series[0].addPoint(time, vehicle_data.emissions]);
+						emmissions.series[0].addPoint([time, vehicle_data.emissions]);
 						elect_cons.series[0].addPoint([time, vehicle_data.electrical_consumption]);
 						
 						console.log("SPEED:" + vehicle_data.speed + "time: " + time );
