@@ -109,11 +109,13 @@
 				
 				ws.onmessage = function(e) {
 
-					console.log("OK SOMETHING's HAPPENING" + vehicle_data.speed + "time : " + time );
+					
 
 					// Parse data from Simulink
 					var vehicle_data = JSON.parse(e.data).vehicle;
 					
+
+
 					// Add points to graph 
 					fuel_con.series[0].addPoint([vehicle_data.fuel_consumption, time ]);
 					fuel_eff.series[0].addPoint([vehicle_data.fuel_economy, time ]);
@@ -122,7 +124,8 @@
 
 					// Update time to plot in next position on next message 
 					time += 1; 
-
+					
+					console.log("OK SOMETHING's HAPPENING" + vehicle_data.speed + "time : " + time );
 					// Update speedo				
 		            var first = $('#speedo').highcharts().series[0].points[0];       
 		            var second = $('#speedo').highcharts().series[1].points[0];       
