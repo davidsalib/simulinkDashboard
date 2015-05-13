@@ -125,7 +125,9 @@
 					// Update time to plot in next position on next message 
 					time += 1; 
 					
-					console.log("OK SOMETHING's HAPPENING" + vehicle_data.speed + "time : " + time );
+					console.log("SPEED:" + vehicle_data.speed + "time: " + time );
+					console.log(vehicle_data);
+						
 					// Update speedo				
 		            var first = $('#speedo').highcharts().series[0].points[0];       
 		            var second = $('#speedo').highcharts().series[1].points[0];       
