@@ -109,7 +109,7 @@
 				
 				ws.onmessage = function(e) {
 
-					console.log("OK SOMETHING's HAPPENING");
+					console.log("OK SOMETHING's HAPPENING" + vehicle_data.speed + "time : " + time );
 
 					// Parse data from Simulink
 					var vehicle_data = JSON.parse(e.data).vehicle;
