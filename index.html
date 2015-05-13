@@ -115,7 +115,7 @@
 					// Update time to plot in next position on next message 
 					time += 1;
 
-					if(speed % 10 == 0){ 
+					if(vehicle_data.speed % 10 == 0){ 
 						// Add points to graph 
 						fuel_con.series[0].addPoint([time, vehicle_data.fuel_consumption]);
 						fuel_eff.series[0].addPoint([time, vehicle_data.fuel_economy]);
