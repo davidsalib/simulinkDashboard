@@ -116,38 +116,40 @@
 					
 
 
-					// Add points to graph 
-					fuel_con.series[0].addPoint([vehicle_data.fuel_consumption, time ]);
-					fuel_eff.series[0].addPoint([vehicle_data.fuel_economy, time ]);
-					emmissions.series[0].addPoint([vehicle_data.emissions, time ]);
-					elect_cons.series[0].addPoint([vehicle_data.electrical_consumption, time ]);
-
 					// Update time to plot in next position on next message 
-					time += 1; 
-					
-					console.log("SPEED:" + vehicle_data.speed + "time: " + time );
-					console.log(vehicle_data);
-						
-					// Update speedo				
-		            var first = $('#speedo').highcharts().series[0].points[0];       
-		            var second = $('#speedo').highcharts().series[1].points[0];       
-		            first.update(vehicle_data.speed);     
-		            second.update(vehicle_data.engine_speed)   
+					time += 1;
 
-					//document.getElementById("speed").innerHTML = vehicle_data.speed;
-					//document.getElementById("fuel_consumption").innerHTML = vehicle_data.fuel_consumption;
-					//document.getElementById("fuel_economy").innerHTML = vehicle_data.fuel_economy;
-					//document.getElementById("emissions").innerHTML = vehicle_data.emissions;
-					//document.getElementById("electrical_consumption").innerHTML = vehicle_data.electrical_consumption;
-					document.getElementById("soc").innerHTML = vehicle_data.soc;
-					document.getElementById("ev_range_remaining").innerHTML = vehicle_data.ev_range_remaining;
-					document.getElementById("ev_range_total").innerHTML = vehicle_data.ev_range_total;
-					document.getElementById("operation_mode").innerHTML = vehicle_data.operation_mode;
-					//document.getElementById("engine_speed").innerHTML = vehicle_data.engine_speed;
-					document.getElementById("trip_fuel_economy_us").innerHTML = vehicle_data.trip_fuel_economy_us;
-					document.getElementById("trip_fuel_economy_metric").innerHTML = vehicle_data.trip_fuel_economy_metric;
-					document.getElementById("gear").innerHTML = vehicle_data.gear;
-					document.getElementById("engine_temp").innerHTML = vehicle_data.engine_temp;
+					if(speed % 10 == 0){ 
+						// Add points to graph 
+						fuel_con.series[0].addPoint([time, vehicle_data.fuel_consumption]);
+						fuel_eff.series[0].addPoint([time, vehicle_data.fuel_economy]);
+						emmissions.series[0].addPoint(time, vehicle_data.emissions]);
+						elect_cons.series[0].addPoint([time, vehicle_data.electrical_consumption]);
+						
+						console.log("SPEED:" + vehicle_data.speed + "time: " + time );
+						console.log(vehicle_data);
+							
+						// Update speedo				
+			            var first = $('#speedo').highcharts().series[0].points[0];       
+			            var second = $('#speedo').highcharts().series[1].points[0];       
+			            first.update(parseInt(vehicle_data.speed));     
+			            second.update(parseInt(vehicle_data.engine_speed));   
+
+						//document.getElementById("speed").innerHTML = vehicle_data.speed;
+						//document.getElementById("fuel_consumption").innerHTML = vehicle_data.fuel_consumption;
+						//document.getElementById("fuel_economy").innerHTML = vehicle_data.fuel_economy;
+						//document.getElementById("emissions").innerHTML = vehicle_data.emissions;
+						//document.getElementById("electrical_consumption").innerHTML = vehicle_data.electrical_consumption;
+						document.getElementById("soc").innerHTML = vehicle_data.soc;
+						document.getElementById("ev_range_remaining").innerHTML = vehicle_data.ev_range_remaining;
+						document.getElementById("ev_range_total").innerHTML = vehicle_data.ev_range_total;
+						document.getElementById("operation_mode").innerHTML = vehicle_data.operation_mode;
+						//document.getElementById("engine_speed").innerHTML = vehicle_data.engine_speed;
+						document.getElementById("trip_fuel_economy_us").innerHTML = vehicle_data.trip_fuel_economy_us;
+						document.getElementById("trip_fuel_economy_metric").innerHTML = vehicle_data.trip_fuel_economy_metric;
+						document.getElementById("gear").innerHTML = vehicle_data.gear;
+						document.getElementById("engine_temp").innerHTML = vehicle_data.engine_temp;
+					}
 				};
 			}
 
