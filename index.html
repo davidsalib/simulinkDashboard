@@ -115,8 +115,16 @@
 					// Update time to plot in next position on next message 
 					time += 1;
 
-					if(vehicle_data.speed % 10 == 0){ 
+					if(parseInt(vehicle_data.speed) % 10 == 0){ 
 						// Add points to graph 
+
+						vehicle_date.fuel_consumption 		= parseInt(vehicle_date.fuel_consumption);
+						vehicle_data.fuel_economy 			= parseInt(vehicle_data.fuel_economy);
+						vehicle_data.emissions 				= parseInt(vehicle_data.emissions);
+						vehicle_data.electrical_consumption = parseInt(vehicle_data.electrical_consumption);
+						vehicle_data.speed 					= parseInt(vehicle_data.speed);
+						vehicle_data.engine_speed			= parseInt(vehicle_data.engine_speed);
+
 						fuel_con.series[0].addPoint([time, vehicle_data.fuel_consumption]);
 						fuel_eff.series[0].addPoint([time, vehicle_data.fuel_economy]);
 						emmissions.series[0].addPoint([time, vehicle_data.emissions]);
@@ -128,8 +136,8 @@
 						// Update speedo				
 			            var first = $('#speedo').highcharts().series[0].points[0];       
 			            var second = $('#speedo').highcharts().series[1].points[0];       
-			            first.update(parseInt(vehicle_data.speed));     
-			            second.update(parseInt(vehicle_data.engine_speed));   
+			            first.update(vehicle_data.speed);     
+			            second.update(vehicle_data.engine_speed);   
 
 						//document.getElementById("speed").innerHTML = vehicle_data.speed;
 						//document.getElementById("fuel_consumption").innerHTML = vehicle_data.fuel_consumption;
