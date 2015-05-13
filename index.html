@@ -115,7 +115,7 @@
 					// Update time to plot in next position on next message 
 					time += 1;
 
-					if(parseInt(vehicle_data.speed) % 10 == 0){ 
+					if(time % 10 == 0){ 
 						// Add points to graph 
 
 						vehicle_data.fuel_consumption 		= parseInt(vehicle_data.fuel_consumption);
