@@ -17,7 +17,7 @@
 
 	<div id='logo'>
 		<img src='img/logo.png'  height="60px"/>
-		<h3>University of Waterloo Alternate Fuels Team</h3><button onclick='connect()'>Maybe this will work?</button>
+		<h3>University of Waterloo Alternate Fuels Team</h3><button id='toggle_connect' onclick='connect()'>Maybe this will work?</button>
 	</div>
 	<div id='car'>
 		<p style='left:10px; top:10px;'>SOC <span id='soc'>80%</span></p>
@@ -71,7 +71,7 @@
 
 
 			// Used to add points to all the graphs and gauge
-			var fuel_con = $('#fuel_consumption').highcharts();
+			//var fuel_con = $('#fuel_consumption').highcharts();
 			var fuel_eff = $('#fuel_efficiency').highcharts();
 			var emmissions = $('#emissions').highcharts();
 			var elect_cons = $('#electrical_consumption').highcharts();
