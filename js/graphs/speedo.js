@@ -111,8 +111,8 @@ $(function () {
                         fontFamily: 'Arial, Helvetica, sans-serif'                    }
                 },
                 min: 0,
-                max: 140,
-                tickInterval: 10,
+                max: 300,
+                tickInterval: 20,
                 tickLength: 6,
                 lineWidth: 2,
                 lineColor: speedColor,
