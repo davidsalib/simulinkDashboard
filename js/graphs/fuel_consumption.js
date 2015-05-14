@@ -33,7 +33,9 @@ $(function () {
 	        },
 	        series: [{
 	            color: '#00ccff',
-	            data: [],
+	            enableMouseTracking: false, 
+	            marker: {enabled: false}, 
+	            data: []
 
 	        }],
 	        exporting: { enabled: false },

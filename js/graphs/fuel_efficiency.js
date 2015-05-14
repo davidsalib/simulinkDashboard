@@ -33,6 +33,8 @@ $(function () {
 	        },
 	        series: [{
 	            data: [],
+	            enableMouseTracking: false, 
+	            marker: {enabled: false},
 	            color: '#00FFBF'
 
 	        }],

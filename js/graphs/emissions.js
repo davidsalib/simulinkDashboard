@@ -33,6 +33,8 @@ $(function () {
 	        },
 	        series: [{
 	            data: [],
+	           marker: {enabled: false}, 
+	            enableMouseTracking: false, 
 	            color: '#99FF00'
 	        }],
 	        exporting: { enabled: false },
