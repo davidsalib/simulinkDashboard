@@ -115,7 +115,7 @@
 					// Update time to plot in next position on next message 
 					time += 1;
 
-					if(time % 10 == 0){ 
+					//if(time % 10 == 0){ 
 						// Add points to graph 
 
 						vehicle_data.fuel_consumption 			= Math.round(parseInt(vehicle_data.fuel_consumption));
@@ -157,7 +157,7 @@
 						document.getElementById("trip_fuel_economy_metric").innerHTML = vehicle_data.trip_fuel_economy_metric;
 						document.getElementById("gear").innerHTML = vehicle_data.gear;
 						document.getElementById("engine_temp").innerHTML = vehicle_data.engine_temp;
-					}
+					//}
 				};
 			}
 
